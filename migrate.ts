@@ -57,12 +57,12 @@ SELECT max(version) AS version FROM migraine.schema_version;
       path.join(migrationsDir, migrations[version]),
     );
     await tx.queryObject<Record<never, never>>(sql);
-  }
 
-  const newVersion = version + 1;
-  await tx.queryObject<Record<never, never>>`
-UPDATE migraine.schema_version SET version=${newVersion};
-`;
+    const newVersion = version + 1;
+    await tx.queryObject<Record<never, never>>`
+  UPDATE migraine.schema_version SET version=${newVersion};
+  `;
+  }
 
   await tx.commit();
   return didWork;
