@@ -52,6 +52,7 @@ SELECT max(version) AS version FROM migraine.schema_version;
   // Migration #1 applied is `version==1`.
   // Thus, process migration step at 0-based index `version`.
   if (migrations.length > version) {
+    console.log({migration: migrations[version]})
     didWork = true;
     const sql = await Deno.readTextFile(
       path.join(migrationsDir, migrations[version]),
