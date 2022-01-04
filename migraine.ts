@@ -56,11 +56,12 @@ async function run(args: string[]): Promise<void> {
         console.log(`Unknown flag: ${x}`);
         Deno.exit(2);
       }
-
-      console.log(`Unexpected positional arg: ${x}`);
-      Deno.exit(2);
     },
   });
+  if (flags["_"].length > 0) {
+    console.log(`Unexpected positional arg: ${flags["_"][0]}`);
+    Deno.exit(2);
+  }
   if (typeof flags["migrations"] == "object") {
     console.log(`Flag --migrations= can only be used once`);
     Deno.exit(2);
