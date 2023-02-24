@@ -50,6 +50,7 @@ function alwaysArray(input: undefined | string | string[]): string[] {
 async function run(args: string[]): Promise<void> {
   const flags = parse(args, {
     string: ["migrations", "auth"],
+    collect: ["auth"],
     unknown: function (x: string) {
       // Reject unknown flags
       if (x.startsWith("-")) {
