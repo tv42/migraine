@@ -1,5 +1,5 @@
-import { Client } from "https://deno.land/x/postgres/mod.ts";
-import * as path from "https://deno.land/std/path/mod.ts";
+import { Client } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
+import * as path from "https://deno.land/std@0.178.0/path/mod.ts";
 
 export interface MigrateOptions {
   migrationsDir: string;

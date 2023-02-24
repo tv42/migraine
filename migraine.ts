@@ -15,8 +15,8 @@
 //   --auth=wsmith=/secrets/wsmith
 // ```
 
-import { parse } from "https://deno.land/std/flags/mod.ts";
-import { Client } from "https://deno.land/x/postgres/mod.ts";
+import { parse } from "https://deno.land/std@0.178.0/flags/mod.ts";
+import { Client } from "https://deno.land/x/postgres@v0.17.0/mod.ts";
 
 import { listMigrations } from "./list_migrations.ts";
 import { migrate } from "./migrate.ts";
